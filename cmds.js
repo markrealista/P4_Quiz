@@ -125,7 +125,7 @@ exports.testCmd = (socket, rl,id) => {
       error.errors.forEach(({message}) => errorlog(message));
   })
   .catch(error => {
-      errorlog(error.message);
+      errorlog(socket, error.message);
   })
   .then(() => {
       rl.prompt();
